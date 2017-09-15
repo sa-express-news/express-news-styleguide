@@ -12,4 +12,4 @@ npm install --save-dev newsapps-styles
 
 ## Getting start
 
-Pop on over to the [wiki](https://github.com/sa-express-news/express-news-styleguide/wiki/Getting-started) to get drunk on knowledge.
+Pop on over to the [wiki](https://github.com/sa-express-news/express-news-styleguide/wiki) to get drunk on knowledge.
