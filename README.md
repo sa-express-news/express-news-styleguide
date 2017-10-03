@@ -7,7 +7,7 @@ Inspiration is pulled liberally from the [SF Chronicle](https://github.com/sfchr
 ## Installing
 
 ```sh
-npm install --save-dev newsapps-styles
+npm install --save-dev express-news-styleguide
 ```
 
 ## Getting start
