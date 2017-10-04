@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Style Guide | San Antonio Express News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target='_parent'>
+  <!-- build:css styles/main.min.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+
+  <header>
+    <div id="title">San Antonio Express-News graphic style guide</div>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#base">Base .scss</a></li>
+      <li><a href="#tables">Tables</a></li>
+    </ul>
+  </header>
+
+  <div id="main" class="graphic">
+
+    <h1 id="overview">Overview</h1>
+
+    <p>The goal of this style guide is to provide a flexible framework for all Data Team graphic projects. This wiki should act as a reference. However, the style guide repo also provides a suite of style files that can be installed via NPM and utilized as a boilerplate styling framework for your projects.</p>
+
+    <p>This repo comes with versioning and is installable via <a href="https://www.npmjs.com/package/express-news-styleguide" target="_blank">npm.</a></p>
+
+    <p>Inspiration is pulled liberally from the <a href="https://github.com/sfchronicle/newsapp-template" target="_blank">SF Chronicle</a> and <a href="https://github.com/texastribune/newsapps-graphic-kit" target="_blank">Texas Tribune news app</a> templates.</p>
+
+    <h2>Installing the style files</h2>
+
+    <code class="full">npm install --save-dev express-news-styleguide</code>
+
+    <h2>Utilizing the style files</h2>
+
+    <p>The style files are written in SCSS — a Sass syntax that builds on the existing CSS syntax. If you're unfamiliar with Sass or SCSS, read <a href="http://sass-lang.com/guide" target="_blank">this guide</a> to catch up on the basics.</p>
+
+    <p>On its first iteration, the style files are broken into two folders – base and theme. Currently theme contains just one file, graphic.scss, which operates as a boilerplate that can be used with c3 and graphicBuilder graphics. Learn more about how base is structured <a href="#base">here</a>.</p>
+
+    <p>If installing via NPM, you can access the style files in your project's .scss files like this:</p>
+
+    <code class="full">
+      <span>@import</span> 'node_modules/express-news-styleguide/init-base';<br>
+      <span id="typography">@import</span> 'node_modules/express-news-styleguide/theme/graphic';
+    </code>
+
+    <h1>Typography</h1>
+
+    <p>The most important rule to remember with typography is that, in graphics, we use a <em>sans-serif</em> font. This includes for the header, the chatter and anywhere else in the graphic. Since our regular text is serif, this allows us to differentiate graphic blocks and copy from regular text and headers.</p>
+
+    <p>With this in mind, we generally utilize three fonts. These are as follows:</p>
+
+    <ul>
+      <li>Sans-serif (for use in all graphic typography): 
+        <ul>
+          <li><code>"Helvetica Neue", Helvetica, Arial, sans-serif;</code></li>
+          <li>This is some text written with our main sans-serif font.</li>
+        </ul>
+      </li>
+      <li class="serif">Serif (for use in regular paragraph text outside of graphics): 
+        <ul>
+          <li><code>"Sanchez", serif;</code></li>
+          <li>This is some text written with our main serif font. We use this for paragraph text in stories but not graphics.</li>
+        </ul>
+      </li>
+      <li class="serif-title">Serif (for use in titles outside of graphics):
+        <ul>
+          <li><code>"Suez One", serif;</code></li>
+          <li>This is some text written with our title serif font. We use this for title in stories but not graphics.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>Two of those fonts will need to be imported from Google Fonts. That can be done in two ways:</p>
+
+    <ul>
+      <li>In HTML:
+        <ul>
+          <li><code>&lt;<span>link</span> href="https://fonts.googleapis.com/css?family=Sanchez|Suez+One" rel="stylesheet"&gt;</code></li>
+        </ul>
+      </li>
+      <li>Or in CSS:
+        <ul>
+          <li><code><span>@import</span> url('https://fonts.googleapis.com/css?family=Sanchez|Suez+One');</code></li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>Font sizes are flexible at the moment. However, if we assume the baseline font size to be <code>14px</code>, we can say that in most cases:</p>
+
+    <ul>
+      <li>Paragraph text should be <code>1.2em</code></li>
+      <li id="colors" style="font-size: 2em;">Title text should be <code>2em</code></li>
+    </ul>
+
+    <h1>Graphic color schemes</h1>
+
+    <p>At least for the moment, we haven't set any definitive styles for graphic colors. That being said, we do have a graphic color chart that you can use to help pick logical color combinations. It looks like this:</p>
+
+    <div class="centered-img">
+      <a href="https://github.com/sa-express-news/express-news-styleguide/blob/master/media/graph_color-schemes.pdf" target="_blank">
+        <img src="assets/images/graphic-color-chart.png" />
+      </a>
+    </div>
+
+    <p>You can download the graphic color chart (and view it in more detail with hex and RGB codes) by <a href="https://github.com/sa-express-news/express-news-styleguide/blob/master/media/graph_color-schemes.pdf" target="_blank">clicking here</a>.
+
+    <p>We also support the use of <a href="http://colorbrewer2.org/" target="_blank">ColorBrewer color schemes</a>.</p>
+
+    <h2>Political colors</h2>
+
+    <p>When 'tis the season, here are the colors to use:</p>
+
+    <ul>
+      <li>Democratic Blue:
+        <ul>
+          <li><div class="color-block dem"></div></li>
+          <li><code>rgb(23, 117, 174)</code></li>
+          <li><code>#1775AE</code></li>
+          <li><code>$dem-blue // sass variable</code></li>
+        </ul>
+      </li>
+      <li>Republican Red:
+        <ul>
+          <li><div class="color-block rep"></div></li>
+          <li><code>rgb(214, 73, 70)</code></li>
+          <li><code>#D64946</code></li>
+          <li><code>$rep-red // sass variable</code></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Standard ExpressNews colors</h2>
+
+    <p>Colors should match those utilized in the story template and/or those in your graphic depending on proximity. This being said, there are two colors we use frequently on E-N.com:</p>
+
+    <ul>
+      <li>ExpressNews Black:
+        <ul>
+          <li><div class="color-block black"></div></li>
+          <li><code>rgb(20, 20, 20)</code></li>
+          <li><code>#141414</code></li>
+          <li><code>$en-black // sass variable</code></li>
+        </ul>
+      </li>
+      <li>ExpressNews Red (utilized for linked text):
+        <ul>
+          <li><div class="color-block red"></div></li>
+          <li><code>rgb(186, 20, 26)</code></li>
+          <li><code>#BA141A</code></li>
+          <li><code>$en-red // sass variable</code></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Longform Colors</h2>
+
+    <p>The longform React template comes with its own unique color scheme. For reference, here are the colors associated with that template:</p>
+
+    <ul>
+      <li>Longform Red:
+        <ul>
+          <li><div class="color-block lf-red"></div></li>
+          <li><code>rgb(246, 0, 0)</code></li>
+          <li><code>#F60000</code></li>
+          <li><code>$longform-red // sass variable</code></li>
+        </ul>
+      </li>
+      <li>Longform Yellow:
+        <ul>
+          <li><div class="color-block lf-yellow"></div></li>
+          <li><code>rgb(248, 248, 0)</code></li>
+          <li><code>#F8F800</code></li>
+          <li><code>$longform-yellow // sass variable</code></li>
+        </ul>
+      </li>
+      <li>Longform Orange:
+        <ul>
+          <li><div class="color-block lf-orange"></div></li>
+          <li><code>rgb(252, 176, 1)</code></li>
+          <li><code>#FCB001</code></li>
+          <li><code>$longform-orange // sass variable</code></li>
+        </ul>
+      </li>
+      <li>Longform Gray:
+        <ul>
+          <li><div class="color-block lf-gray"></div></li>
+          <li><code>rgb(122, 122, 122)</code></li>
+          <li><code>#7A7A7A</code></li>
+          <li><code>$longform-gray // sass variable</code></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Understand the SASS variables</h2>
+
+    <p>Each color discussed above, including all those in the graphic color chart, is available as a SASS variables in the ExpressNews style guide. If you <a href="https://www.npmjs.com/package/express-news-styleguide" target="_blank">download this style guide via NPM</a>, you can utilize the variables in your project and modify them as you see fit for the circumstance.</p>
+
+    <p id="base">If you are new to SASS, you can learn more <a href="http://sass-lang.com/guide" target="_blank">here</a>.</p>
+
+    <h1>Understand The Base .SCSS Files</h1>
+
+    <p>Everything you need to jump start a project is contained in the base folder. Here's an explanation of each of the partials:</p>
+
+    <h2>_base.scss</h2>
+
+    <p>These are the only styles applied directly to HTML elements. If you really need a clean slate, don't use this partial. But it's helpful for normalizing styles and inheriting basic news apps prose styles without using additional classes.</p>
+
+    <h2>_colors.scss:</h2>
+
+    <p>All of our colors are assigned to $variables, most of which have a descriptive name to help you decide when to use it. For example, $rep-red and $dem-blue are used for typical political party designations.</p>
+
+    <h2>_tables.scss:</h2>
+
+    <p>This partial contains one mixin to rule them all — i.e. all the variations of mobile table styles. <a href="#tables">Skip to Tables</a> to learn more.</p>
+
+    <h2>_typography.scss:</h2>
+
+    <p id="tables">Our style guide has a modular typography system. By changing the size $variables, you can change font-sizes across the entire project. The system also allows you to designate font-size with .classes in your HTML or @extend %font-sizes on new classes.</p>
+
+    <h1>Tables</h1>
+
+    <p>I will need to build out proper examples of how to use the table styling, but I think it will really help to speed up our efforts in building flexible mobile first tables. The <a href="https://github.com/sa-express-news/express-news-styleguide/blob/master/base/_tables.scss" target="_blank">style file is viewable here</a>.</p>
+
+  </div>
+
+<!-- build:js scripts/main.min.js -->
+<script src="/node_modules/pym.js/dist/pym.v1.min.js"></script>
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -11,7 +11,7 @@ $default-mobile: 480px;
 // Media Query Mixin
 // =========================
 
-@mixin mediaquery($bp, $type:'max-width') {
+@mixin mediaquery($bp, $type:'min-width') {
   @media ($type: #{$bp}) {
     @content;
   }

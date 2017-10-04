@@ -1,0 +1,153 @@
+@import 'node_modules/express-news-styleguide/init-base';
+@import 'node_modules/express-news-styleguide/theme/graphic';
+
+body {
+	font-size: 14px;
+}
+
+header {
+	height: 34px;
+	width: 100%;
+	background-color: $en-black;
+	position: fixed;
+	top: 0;
+	padding: 6px 10px 0;
+	font-family: $base-sans-serif;
+
+	div#title {
+		font-size: 16px;
+		color: white;
+		font-weight: 100;
+		float: left;
+		margin-top: 2px;
+
+		@include mediaquery($default-tablet) {
+			font-size: 22px;
+			margin-top: 0;
+		}
+	}
+	
+	ul {
+		list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	float: right;
+    	margin: 5px 1% 0 0;
+
+    	@include mediaquery($default-desktop) {
+    		margin: 2px 1% 0 0;
+    	}
+
+    	li {
+    		float: left;
+    		color: white;
+    		font-family: $base-sans-serif;
+    		padding-right: 10px;
+    		font-weight: 200;
+    		display: none;
+
+    		@include mediaquery($default-tablet) {
+    			padding-right: 10px;
+    			font-size: 1em;
+    			display: inline;
+    		}
+
+    		@include mediaquery($default-desktop) {
+    			padding-right: 20px;
+    			font-size: 1.2em;
+    		}
+
+    		a {
+    			color: white;
+    			text-decoration: none;
+    		}
+    	}
+	}
+
+}
+
+#main {
+	margin: 44px auto 0;
+	font-family: $base-sans-serif;
+
+	h1 {
+		font-size: 2.2em;
+		border-bottom: 1px solid $border-gray;
+		padding-top: 10px;
+	}
+
+	h2 {
+		font-size: 1.8em;
+	}
+
+	p {
+		font-size: 1.2em;
+	}
+
+	ul li {
+		font-size: 1.2em;
+		line-height: 30px;
+
+		&.serif {
+			font-family: $base-serif;
+		}
+
+		&.serif-title {
+			font-family: $base-serif-title;
+		}
+
+		li {
+			font-size: 1em;
+		}
+	}
+
+	a {
+		color: $en-red;
+		text-decoration: none;
+	}
+
+	code {
+		background-color: $background-gray;
+
+		&.full {
+			padding: 15px;
+			width: 100%;
+			display: inline-block;
+			margin: 20px 0;
+		}
+
+		span {
+			color: $en-red;
+		}
+	}
+
+	div.centered-img {
+		width: 98%;
+		height: auto;
+		margin: 10px auto;
+
+		@include mediaquery($default-tablet) {
+			width: 90%;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	div.color-block {
+		height: 1em;
+		width: 1em;
+		display: inline-block;
+
+		&.black { background-color: $en-black; } 
+		&.red { background-color: $en-red; } 
+		&.dem { background-color: $dem-blue; } 
+		&.rep { background-color: $rep-red; }
+		&.lf-red { background-color: $longform-red; } 
+		&.lf-yellow { background-color: $longform-yellow; } 
+		&.lf-orange { background-color: $longform-orange; } 
+		&.lf-gray { background-color: $longform-gray; } 
+	}
+}

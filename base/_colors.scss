@@ -1,11 +1,15 @@
 // Colors
 // ======
 
+// Site color
+$en-red: rgb(186, 20, 26);
+$en-black: rgb(20, 20, 20);
+
 // Black to white
 $black: rgb(0, 0, 0);
-$en-black: rgb(20, 20, 20);
 $bodytext-black: rgb(40, 40, 40);
 $text-gray: rgb(102, 102, 102);
+$line-gray: rgb(187, 187, 187);
 $border-gray: rgb(204, 204, 204);
 $background-gray: rgb(245, 245, 245);
 $white: rgb(255, 255, 255);
@@ -40,3 +44,9 @@ $light-grey: rgb(207, 204, 199);
 // Political colors
 $dem-blue: rgb(23, 117, 174);
 $rep-red: rgb(214, 73, 70);
+
+// React long form template color scheme
+$longform-red: rgb(246, 0, 0);
+$longform-yellow: rgb(248, 248, 0);
+$longform-orange: rgb(252, 176, 1);
+$longform-gray: rgb(122, 122, 122);
