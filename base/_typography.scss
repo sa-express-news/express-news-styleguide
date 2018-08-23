@@ -23,7 +23,7 @@ $xxs: 9;
   font-size: $f/$base+rem;
 
   @if $pct != 1 {
-    @include mediaquery($bp) {
+    @include mediaquery($bp, 'max-width') {
       font-size: $f*$pct+px; // for IE8
       font-size: $f*$pct/$base+rem;
     }
